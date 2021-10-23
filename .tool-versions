@@ -1,0 +1,6 @@
+asdf global nodejs latest
+asdf global golang latest
+asdf global java latest
+asdf global kubectl latest
+asdf global helm latest
+asdf global maven latest
