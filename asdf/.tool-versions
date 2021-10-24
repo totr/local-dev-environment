@@ -4,3 +4,4 @@ asdf global java latest
 asdf global kubectl latest
 asdf global helm latest
 asdf global maven latest
+asdf global terraform latest

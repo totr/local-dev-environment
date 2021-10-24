@@ -6,6 +6,8 @@ brew "zinit"
 
 # IDE
 cask "visual-studio-code"
+cask "intellij-idea"
+cask "goland"
 
 # Core functions
 brew "coreutils"
@@ -16,6 +18,13 @@ brew "gnu-sed"
 brew "telnet"
 brew "expect"
 brew "gpg"
+brew "netcat"
+brew "watch"
+
+# Communication tools
+cask "slack"
+cask "microsoft-teams"
+cask "skype-for-business"
 
 # Dev tools
 cask "kaleidoscope"
@@ -27,6 +36,9 @@ brew "k6"
 brew "dive"
 brew "docker"
 brew "docker-compose"
+brew "insomnia"
+brew "ansible"
+cask "lepton"
 
 # Dev tools management
 brew "asdf"
@@ -39,19 +51,23 @@ brew "git"
 brew "git-crypt"
 
 # Utilities
+brew "mas"
+cask "coteditor"
 brew "wireshark"
 brew "mitmproxy"
 brew "no-more-secrets"
 brew "nnn"
 brew "openvpn"
-cask "1password"
 brew "1password-cli"
+cask "spotify"
+cask "kindle"
 
 # Kubernetes tools
 brew "k9s"
 brew "k3d"
 brew "stern"
 brew "kubectx"
+cask "kui"
 
 # Cloud tools
 brew "azure-cli"

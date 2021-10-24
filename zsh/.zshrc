@@ -31,3 +31,18 @@ zinit load zsh-users/zsh-autosuggestions
 
 # ASDF Java plugin
 . ~/.asdf/plugins/java/set-java-home.zsh
+
+
+p () {
+  cd /work/projects/$1
+}
+
+pass () {    
+  local item
+  item=$(1pass | fzf --exact --layout reverse --prompt="Password for > ");
+  if [ -n "$1" ] && [ $1 = "OUTPUT" ]; then
+    [[ -n "$item" ]] && 1pass -p "$item" "password"
+  else
+    [[ -n "$item" ]] && 1pass "$item" "password"
+  fi
+}

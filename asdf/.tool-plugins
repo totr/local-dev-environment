@@ -4,3 +4,4 @@ nodejs https://github.com/asdf-vm/asdf-nodejs.git
 kubectl https://github.com/asdf-community/asdf-kubectl.git
 helm https://github.com/Antiarchitect/asdf-helm.git
 maven https://github.com/halcyon/asdf-maven.git
+terraform https://github.com/asdf-community/asdf-hashicorp.git
