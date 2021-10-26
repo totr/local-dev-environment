@@ -36,6 +36,12 @@
 
 
 
+## iTerm2 setup
+
+```zsh
+mkdir -p ~/.iterm && cp iterm2/com.googlecode.iterm2.plist ~/.iterm
+```
+
 ## ZSH setup
 ```zsh
 cp zsh/.zshrc ~/.zshrc
@@ -44,5 +50,11 @@ cp zsh/.zshrc ~/.zshrc
 ## ASDF setup
 ```zsh
 cat asdf/.tool-plugins | xargs -n2 asdf plugin add
+cut -d' ' -f1 asdf/.tool-plugins | xargs I{} asdf install {} latest
 cp asdf/.tool-versions ~/.tool-versions
+```
+
+## MacOS setup
+```sh
+source macos/setup.sh
 ```

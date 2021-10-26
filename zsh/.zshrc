@@ -32,7 +32,6 @@ zinit load zsh-users/zsh-autosuggestions
 # ASDF Java plugin
 . ~/.asdf/plugins/java/set-java-home.zsh
 
-
 p () {
   cd /work/projects/$1
 }

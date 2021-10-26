@@ -5,3 +5,6 @@ asdf global kubectl latest
 asdf global helm latest
 asdf global maven latest
 asdf global terraform latest
+asdf global concourse latest
+asdf global istioctl latest
+asdf global argocd latest

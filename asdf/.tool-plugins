@@ -5,3 +5,6 @@ kubectl https://github.com/asdf-community/asdf-kubectl.git
 helm https://github.com/Antiarchitect/asdf-helm.git
 maven https://github.com/halcyon/asdf-maven.git
 terraform https://github.com/asdf-community/asdf-hashicorp.git
+concourse https://github.com/mattysweeps/asdf-concourse.git
+istioctl https://github.com/virtualstaticvoid/asdf-istioctl.git
+argocd https://github.com/beardix/asdf-argocd.git

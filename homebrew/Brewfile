@@ -1,8 +1,10 @@
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 
 # Terminal
 cask "iterm2"
 brew "zinit"
+cask "font-hack-nerd-font"
 
 # IDE
 cask "visual-studio-code"
@@ -11,6 +13,7 @@ cask "goland"
 
 # Core functions
 brew "coreutils"
+brew "tmux"
 brew "fzf"
 brew "autojump"
 brew "tree"
@@ -20,6 +23,7 @@ brew "expect"
 brew "gpg"
 brew "netcat"
 brew "watch"
+brew "gzip"
 
 # Communication tools
 cask "slack"
