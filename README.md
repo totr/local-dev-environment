@@ -34,17 +34,16 @@
     chmod a+x /usr/local/bin/1pass
     ```
 
-
-
 ## iTerm2 setup
 
 ```zsh
-mkdir -p ~/.iterm && cp iterm2/com.googlecode.iterm2.plist ~/.iterm
+ln -h iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ```
 
 ## VSCode setup
 
 ```zsh
+mkdir -p /Library/Application\ Support/Code/User/
 ln -h vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 cat vscode/VSCodefile | xargs -n1 code --install-extension
@@ -52,14 +51,14 @@ cat vscode/VSCodefile | xargs -n1 code --install-extension
 
 ## ZSH setup
 ```zsh
-cp zsh/.zshrc ~/.zshrc
+ln -h zsh/.zshrc ~/.zshrc
 ```
 
 ## ASDF setup
 ```zsh
 cat asdf/.tool-plugins | xargs -n2 asdf plugin add
 cut -d' ' -f1 asdf/.tool-plugins | xargs I{} asdf install {} latest
-cp asdf/.tool-versions ~/.tool-versions
+ln -h asdf/.tool-versions ~/.tool-versions
 ```
 
 ## MacOS setup
