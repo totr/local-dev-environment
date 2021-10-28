@@ -42,6 +42,14 @@
 mkdir -p ~/.iterm && cp iterm2/com.googlecode.iterm2.plist ~/.iterm
 ```
 
+## VSCode setup
+
+```zsh
+ln -h vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+cat vscode/VSCodefile | xargs -n1 code --install-extension
+```
+
 ## ZSH setup
 ```zsh
 cp zsh/.zshrc ~/.zshrc

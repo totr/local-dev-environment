@@ -24,6 +24,7 @@ brew "gpg"
 brew "netcat"
 brew "watch"
 brew "gzip"
+brew "wget"
 
 # Communication tools
 cask "slack"
@@ -47,9 +48,6 @@ cask "lepton"
 # Dev tools management
 brew "asdf"
 
-# Environment management
-brew "direnv"
-
 # Source code management
 brew "git"
 brew "git-crypt"
@@ -65,6 +63,7 @@ brew "openvpn"
 brew "1password-cli"
 cask "spotify"
 cask "kindle"
+brew "pinentry-mac"
 
 # Kubernetes tools
 brew "k9s"
@@ -72,6 +71,7 @@ brew "k3d"
 brew "stern"
 brew "kubectx"
 cask "kui"
+brew "krew"
 
 # Cloud tools
 brew "azure-cli"

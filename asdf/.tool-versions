@@ -1,3 +1,4 @@
+asdf global direnv latest
 asdf global nodejs latest
 asdf global golang latest
 asdf global java latest

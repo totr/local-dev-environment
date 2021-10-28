@@ -1,0 +1,35 @@
+{
+    "workbench.colorTheme": "Night Owl (No Italics)",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.iconTheme": "seti",
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "external": true,
+        "args": [
+            "serve"
+        ]
+    },
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "git.suggestSmartCommit": false,
+    "editor.minimap.enabled": false,
+    "vsicons.projectDetection.autoReload": true,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.project.importOnFirstTimeStartup": "automatic",
+    "gitlens.codeLens.recentChange.enabled": false
+}
