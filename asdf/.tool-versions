@@ -1,11 +1,5 @@
-asdf global direnv latest
-asdf global nodejs latest
-asdf global golang latest
-asdf global java latest
-asdf global kubectl latest
-asdf global helm latest
-asdf global maven latest
-asdf global terraform latest
-asdf global concourse latest
-asdf global istioctl latest
-asdf global argocd latest
+direnv 2.28.0
+java openjdk-17.0.1
+golang 1.17.2
+kubectl 1.22.3
+maven 3.8.3

@@ -676,10 +676,12 @@
 				<key>Red Component</key>
 				<real>0.99999600648880005</real>
 			</dict>
+			<key>Cursor Type</key>
+			<integer>0</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Yes</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -773,6 +775,17 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
+				</dict>
+				<key>0x70-0x100000-0x23</key>
+				<dict>
+					<key>Action</key>
+					<integer>37</integer>
+					<key>Label</key>
+					<string></string>
+					<key>Text</key>
+					<string>2BD80339-CA0F-48FB-81F8-D127AE5C0C2A</string>
+					<key>Version</key>
+					<integer>1</integer>
 				</dict>
 				<key>0x70-0x180000-0x23</key>
 				<dict>
@@ -1074,7 +1087,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Smart Cursor Color</key>
 			<true/>
 			<key>Sync Title</key>
@@ -1115,7 +1128,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/tt</string>
+			<string>/projects</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -1426,10 +1439,12 @@
 				<key>Red Component</key>
 				<real>0.99999600648880005</real>
 			</dict>
+			<key>Cursor Type</key>
+			<integer>0</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Yes</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1525,6 +1540,17 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
+				</dict>
+				<key>0x62-0x100000-0xb</key>
+				<dict>
+					<key>Action</key>
+					<integer>37</integer>
+					<key>Label</key>
+					<string></string>
+					<key>Text</key>
+					<string>73AF952C-2A19-4A69-8FBD-8C54C8904DC0</string>
+					<key>Version</key>
+					<integer>1</integer>
 				</dict>
 				<key>0x62-0x180000-0xb</key>
 				<dict>
@@ -1826,7 +1852,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Smart Cursor Color</key>
 			<true/>
 			<key>Space</key>
@@ -1869,11 +1895,13 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/tt</string>
+			<string>/projects</string>
 		</dict>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>SeparateWindowTitlePerTab</key>
