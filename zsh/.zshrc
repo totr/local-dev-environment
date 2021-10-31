@@ -36,7 +36,7 @@ zinit ice wait lucid atload"!_zsh_autosuggest_start"
 zinit load zsh-users/zsh-autosuggestions
 
 # ASDF Java plugin
-. ~/.asdf/plugins/java/set-java-home.zsh
+#. ~/.asdf/plugins/java/set-java-home.zsh
 
 # dandavision/delta
 zinit ice as"command" from"gh-r" mv"delta* -> delta" pick"delta/delta" atclone'curl -Lo _delta https://raw.githubusercontent.com/dandavison/delta/master/etc/completion/completion.zsh' atpull'%atclone'
@@ -44,7 +44,13 @@ zinit light dandavison/delta
 # Configure as default git diff renderer
 git config --global core.pager "delta --dark"
 
+zinit ice silent wait"0"
+zinit snippet ~/.asdf/plugins/java/set-java-home.zsh
+
+zinit ice silent wait"0"
 zinit snippet OMZ::plugins/git/git.plugin.zsh
+
+zinit ice silent wait"0"
 zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
 
 alias watch='watch '
