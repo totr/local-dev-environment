@@ -56,6 +56,9 @@ zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
 alias watch='watch '
 alias kn='kubens'
 alias kc='kubectx'
+alias ls='exa -la'
+
+export PATH=$PATH:~/bin
 
 gaf () {
   git commit --amend --no-edit && git push -f

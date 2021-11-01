@@ -90,6 +90,20 @@ ln -h direnv/direnvrc ~/.config/direnv/direnvrc
 ln -h zsh/.zshrc ~/.zshrc
 ```
 
+## 1pass setup
+```sh
+mkdir -p ~/.gnupg/gpg-agent.conf
+echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" > ~/.gnupg/gpg-agent.conf
+echo "max-cache-ttl 7200" >> ~/.gnupg/gpg-agent.conf
+echo "default-cache-ttl 60" >> ~/.gnupg/gpg-agent.conf
+gpg-agent --daemon
+
+# https://dev.to/wes/how2-using-gpg-on-macos-without-gpgtools-428f
+gpg --full-generate-key
+# https://github.com/dcreemer/1pass
+1pass -rv
+```
+
 ## MacOS setup
 ```sh
 source macos/setup.sh

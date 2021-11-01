@@ -46,9 +46,6 @@ cask "insomnia"
 brew "ansible"
 cask "lepton"
 
-# Dev tools management
-brew "asdf"
-
 # Source code management
 brew "git"
 brew "git-crypt"
@@ -64,6 +61,7 @@ brew "openvpn"
 cask "1password-cli"
 cask "spotify"
 cask "kindle"
+brew "gnupg"
 brew "pinentry-mac"
 
 # Kubernetes tools
