@@ -90,6 +90,12 @@ ln -h direnv/direnvrc ~/.config/direnv/direnvrc
 ln -h zsh/.zshrc ~/.zshrc
 ```
 
+## Starship setup
+```sh
+ln -h starship/starship.toml ~/.config/starship.toml
+
+```
+
 ## 1pass setup
 ```sh
 mkdir -p ~/.gnupg/gpg-agent.conf

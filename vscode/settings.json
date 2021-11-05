@@ -33,5 +33,6 @@
     "java.project.importOnFirstTimeStartup": "automatic",
     "gitlens.codeLens.recentChange.enabled": false,
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "Hack Nerd Font"
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "redhat.telemetry.enabled": false
 }
