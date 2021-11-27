@@ -34,5 +34,8 @@
     "gitlens.codeLens.recentChange.enabled": false,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Hack Nerd Font",
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "window.newWindowDimensions": "maximized",
+    "workbench.panel.opensMaximized": "always",
+    "window.restoreFullscreen": true
 }

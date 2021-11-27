@@ -53,10 +53,15 @@ zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit ice silent wait"0"
 zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
 
+zinit ice silent wait"0"
+zinit light pabloariasal/zfm
+
 alias watch='watch '
 alias kn='kubens'
 alias kc='kubectx'
 alias ls='exa -la'
+alias oc='code $(zfm select --multi) -n'
+
 
 export PATH=$PATH:~/bin
 
