@@ -62,18 +62,17 @@ alias kc='kubectx'
 alias ls='exa -la'
 alias oc='code $(zfm select --multi) -n'
 
-
 export PATH=$PATH:~/bin
 
-gaf () {
+gaf() {
   git commit --amend --no-edit && git push -f
 }
 
-p () {
+p() {
   cd /projects/$1
 }
 
-pass () {    
+pass() {    
   local item
   item=$(1pass | fzf --exact --layout reverse --prompt="Password for > ");
   if [ -n "$1" ] && [ $1 = "OUTPUT" ]; then
@@ -81,4 +80,8 @@ pass () {
   else
     [[ -n "$item" ]] && 1pass "$item" "password"
   fi
+}
+
+fh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --layout reverse | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
