@@ -23,10 +23,6 @@ zinit light sharkdp/bat
 zinit ice as"program" from"gh-r" mv"exa* -> exa" pick"exa/exa" lucid atload"alias ls='exa --icons'"
 zinit light ogham/exa
 
-# wfxr/forgit
-zinit ice wait lucid
-zinit load 'wfxr/forgit'
-
 # fast-syntax-highlighting
 zinit ice wait"5" atinit"zpcompinit; zpcdreplay" lucid
 zinit light zdharma-continuum/fast-syntax-highlighting
@@ -55,6 +51,10 @@ zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
 
 zinit ice silent wait"0"
 zinit light pabloariasal/zfm
+
+# wfxr/forgit
+zinit ice wait lucid
+zinit load 'wfxr/forgit'
 
 alias watch='watch '
 alias kn='kubens'
