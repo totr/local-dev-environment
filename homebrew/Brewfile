@@ -1,5 +1,6 @@
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+tap "thecasualcoder/stable"
 
 # Terminal
 cask "iterm2"
@@ -71,6 +72,7 @@ brew "stern"
 brew "kubectx"
 cask "kui"
 brew "krew"
+brew "kube-fzf"
 
 # Cloud tools
 brew "azure-cli"
