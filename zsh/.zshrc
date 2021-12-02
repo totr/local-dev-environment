@@ -85,3 +85,18 @@ pass() {
 fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --layout reverse | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
+
+gbf() {                                 
+  result=$(git branch -a --color=always | grep -v '/HEAD\s' | sort |
+    fzf --layout reverse --height 60%  --ansi --tac --preview-window right:70% \
+      --preview 'git log --oneline --graph --date=short --color=always --pretty="format:%C(auto)%cd %cn %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -'$LINES |
+    sed 's/^..//' | cut -d' ' -f1)
+
+  if [[ $result != "" ]]; then
+    if [[ $result == remotes/* ]]; then
+      git checkout --track $(echo $result | sed 's#remotes/##')
+    else
+      git checkout "$result"
+    fi
+  fi
+}
