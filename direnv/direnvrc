@@ -8,6 +8,11 @@ setupSsh () {
   ln -s $PWD/env/ssh/id_rsa.pub ~/.ssh/id_rsa.pub
 }
 
+setupMaven () {
+  unlink ~/.asdf/installs/maven/3.8.3/conf/settings.xml
+  ln -s $PWD/env/maven/settings.xml ~/.asdf/installs/maven/3.8.3/conf/settings.xml
+}
+
 export_function() {
   local name=$1
   local alias_dir=$PWD/.direnv/aliases
