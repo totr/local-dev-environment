@@ -1,6 +1,7 @@
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "thecasualcoder/stable"
+tap "hakky54/crip"
 
 # Terminal
 cask "iterm2"
@@ -46,6 +47,7 @@ cask "docker"
 cask "insomnia"
 brew "ansible"
 cask "lepton"
+cask "crip"
 
 # Source code management
 brew "git"
@@ -73,6 +75,7 @@ brew "kubectx"
 cask "kui"
 brew "krew"
 brew "kube-fzf"
+cask "lens"
 
 # Cloud tools
 brew "azure-cli"
