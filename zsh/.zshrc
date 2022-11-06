@@ -4,6 +4,7 @@ source $(brew --prefix)/opt/zinit/zinit.zsh
 # ASDF + Direnv activation
 zinit ice wait lucid
 zinit load redxtech/zsh-asdf-direnv
+export DIRENV_LOG_FORMAT=""
 
 # Load starship theme
  zinit ice lucid from"gh-r" \
@@ -61,8 +62,14 @@ alias kn='kubens'
 alias kc='kubectx'
 alias ls='exa -la'
 alias oc='code $(zfm select --multi) -n'
+alias kubeusage_report="/projects/tt/k8s-day2-ops/resource_calcuation/k8s-resource-reporter/usage.sh"
+alias kubeusage="python3 /projects/tt/k8s-day2-ops/resource_calcuation/k8s-toppur/k8s-toppur.py"
+alias kubeallocation="/projects/tt/kubectl-view-allocations -g namespace"
+alias kuberesources='echo "" && k8s_context && echo "\n\n=============================== RESOURCE ALLOCATION =============================== \n" && kubeallocation && echo "\n\n\n================================= RESOURCE USAGE ================================= \n" && kubeusage'
+alias wireshark="/Applications/Wireshark.app/Contents/MacOS/Wireshark"
 
 export PATH=$PATH:~/bin
+export PATH="${PATH}:${HOME}/.krew/bin"
 
 gaf() {
   git commit --amend --no-edit && git push -f
@@ -80,6 +87,10 @@ pass() {
   else
     [[ -n "$item" ]] && 1pass "$item" "password"
   fi
+}
+
+k8s_context() {
+ kubectl config view -o json | jq -r '."current-context"'
 }
 
 fh() {

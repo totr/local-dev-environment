@@ -96,6 +96,11 @@ ln -h starship/starship.toml ~/.config/starship.toml
 
 ```
 
+## Krew setup
+```sh
+cat krew/.plugins | xargs -n1 kubectl krew install
+```
+
 ## 1pass setup
 ```sh
 mkdir -p ~/.gnupg/gpg-agent.conf

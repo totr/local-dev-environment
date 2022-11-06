@@ -2,6 +2,9 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "thecasualcoder/stable"
 tap "hakky54/crip"
+tap "weaveworks/tap"
+tap "nats-io/nats-tools"
+tap "vmware-tanzu/carvel"
 
 # Terminal
 cask "iterm2"
@@ -32,7 +35,6 @@ brew "wget"
 # Communication tools
 cask "slack"
 cask "microsoft-teams"
-cask "skype-for-business"
 
 # Dev tools
 cask "kaleidoscope"
@@ -46,8 +48,11 @@ brew "dive"
 cask "docker"
 cask "insomnia"
 brew "ansible"
-cask "lepton"
 cask "crip"
+brew "nats-io/nats-tools/nats"
+brew "datawire/blackbird/telepresence"
+brew "terraform-docs"
+brew "ytt"
 
 # Source code management
 brew "git"
@@ -66,6 +71,7 @@ cask "spotify"
 cask "kindle"
 brew "gnupg"
 brew "pinentry-mac"
+brew "slides"
 
 # Kubernetes tools
 brew "k9s"
@@ -75,8 +81,11 @@ brew "kubectx"
 cask "kui"
 brew "krew"
 brew "kube-fzf"
-cask "lens"
 
 # Cloud tools
 brew "azure-cli"
 brew "awscli"
+brew "aws-iam-authenticator"
+brew "doctl"
+brew "weaveworks/tap/eksctl"
+cask "google-cloud-sdk"

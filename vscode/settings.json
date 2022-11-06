@@ -37,5 +37,6 @@
     "redhat.telemetry.enabled": false,
     "window.newWindowDimensions": "maximized",
     "workbench.panel.opensMaximized": "always",
-    "window.restoreFullscreen": true
+    "window.restoreFullscreen": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false
 }

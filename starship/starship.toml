@@ -5,5 +5,10 @@ disabled = true
 disabled = false
 
 [aws]
-disabled = true
+disabled = false
 
+[azure]
+disabled = false
+
+[battery]
+disabled = true
