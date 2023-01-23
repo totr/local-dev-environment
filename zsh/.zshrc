@@ -67,6 +67,7 @@ alias kubeusage="python3 /projects/tt/k8s-day2-ops/resource_calcuation/k8s-toppu
 alias kubeallocation="/projects/tt/kubectl-view-allocations -g namespace"
 alias kuberesources='echo "" && k8s_context && echo "\n\n=============================== RESOURCE ALLOCATION =============================== \n" && kubeallocation && echo "\n\n\n================================= RESOURCE USAGE ================================= \n" && kubeusage'
 alias wireshark="/Applications/Wireshark.app/Contents/MacOS/Wireshark"
+alias pass="1p choose"
 
 export PATH=$PATH:~/bin
 export PATH="${PATH}:${HOME}/.krew/bin"
@@ -77,16 +78,6 @@ gaf() {
 
 p() {
   cd /projects/$1
-}
-
-pass() {    
-  local item
-  item=$(1pass | fzf --exact --layout reverse --prompt="Password for > ");
-  if [ -n "$1" ] && [ $1 = "OUTPUT" ]; then
-    [[ -n "$item" ]] && 1pass -p "$item" "password"
-  else
-    [[ -n "$item" ]] && 1pass "$item" "password"
-  fi
 }
 
 k8s_context() {

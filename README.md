@@ -36,10 +36,11 @@
 
   * 1pass
 
+    https://downloads.1password.com/mac/1Password.zip
+
     ```sh
-    mkdir -p ~/bin
-    curl https://raw.githubusercontent.com/dcreemer/1pass/master/1pass > ~/bin/1pass
-    chmod a+x ~/bin/1pass
+    mkdir -p /Users/tt/.config/1p
+    sudo ln -h zsh/1p /usr/local/bin/1p
     ```
 
 ## Home directory setup
@@ -99,20 +100,6 @@ ln -h starship/starship.toml ~/.config/starship.toml
 ## Krew setup
 ```sh
 cat krew/.plugins | xargs -n1 kubectl krew install
-```
-
-## 1pass setup
-```sh
-mkdir -p ~/.gnupg/gpg-agent.conf
-echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" > ~/.gnupg/gpg-agent.conf
-echo "max-cache-ttl 7200" >> ~/.gnupg/gpg-agent.conf
-echo "default-cache-ttl 60" >> ~/.gnupg/gpg-agent.conf
-gpg-agent --daemon
-
-# https://dev.to/wes/how2-using-gpg-on-macos-without-gpgtools-428f
-gpg --full-generate-key
-# https://github.com/dcreemer/1pass
-1pass -rv
 ```
 
 ## MacOS setup

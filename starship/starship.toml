@@ -2,13 +2,13 @@
 disabled = true
 
 [kubernetes]
-disabled = false
+disabled = true
 
 [aws]
-disabled = false
+disabled = true
 
-[azure]
-disabled = false
+[gcloud]
+disabled = true
 
 [battery]
 disabled = true
