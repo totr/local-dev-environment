@@ -50,7 +50,7 @@ cask "insomnia"
 brew "ansible"
 cask "crip"
 brew "nats-io/nats-tools/nats"
-brew "datawire/blackbird/telepresence"
+brew "datawire/blackbird/telepresence-arm64"
 brew "terraform-docs"
 brew "ytt"
 
@@ -81,6 +81,10 @@ brew "kubectx"
 cask "kui"
 brew "krew"
 brew "kube-fzf"
+brew "vendir"
+brew "kapp"
+brew "imgpkg"
+
 
 # Cloud tools
 brew "azure-cli"
