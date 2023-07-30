@@ -1,0 +1,107 @@
+#!/bin/sh
+#
+# Copyright 2022 <zie@birl.org>
+#
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+# DOCS:
+#	Use op command line tool
+# SETUP:
+#	for iTERM setup a coprocess to run op & choose gui
+#
+# OP release notes: https://app-updates.agilebits.com/product_history/CLI2
+#
+
+if [ -z "$OP_TAG" ]; then
+    OP_TAG="terminal"
+fi
+OP_BIN="op"
+JQ_BIN="jq"
+# for macOS instead of fzf use: https://github.com/sdegutis/choose
+# CHOOSE_BIN="/usr/local/bin/choose"
+CACHE_DIR="${HOME}/.config/1p"
+if [ ! -f  "$CHOOSE_BIN" ]; then
+	CHOOSE_BIN='fzf'
+fi
+
+usage() {
+	echo "usage: 1p <cmd>"
+	echo '  Use one password CLI to choose passwords for terminals'
+	echo ' specially designed for iterm2 and macOS by default'
+	echo
+	echo '	1p list'
+	echo '		list all keys in 1P_TAG'
+	echo '	1p choose'
+	echo '		getpw ITEM from 1P_TAG using FZF or other chooser.'
+	echo '		adds a special item named 'clear' which will clear'
+	echo '		 the cache and let you choose again.'
+	echo '  1p get <item name>'
+	echo '		getpw ITEM from 1P_TAG'
+	echo '  1p clear'
+	echo '		clear the list cache'
+	echo 
+	echo 'requires:'
+	echo '	op cli(with biometrics): https://developer.1password.com/docs/cli/'
+	echo '	jq: https://stedolan.github.io/jq/'
+	echo '	on MacOS:'
+	echo '		choose: https://github.com/sdegutis/choose'
+	echo '	otherwise:'
+	echo '		fzf: https://github.com/junegunn/fzf'
+	exit 1
+}
+list_raw() {
+	if [ -f "${CACHE_DIR}/list" ]; then
+		cat "${CACHE_DIR}/list"
+	else
+		$OP_BIN --cache item list --tags "${OP_TAG}" --format=json > "${CACHE_DIR}/list"
+		cat "${CACHE_DIR}/list"
+	fi
+}
+list() {
+	list_raw | $JQ_BIN --raw-output --sort-keys .[].title
+}
+
+clear() {
+	rm "${CACHE_DIR}/list"
+}
+
+get() {
+	# how to get the ID, but not really needed.
+	ITEM=$2
+	ID=$(list_raw | $JQ_BIN --raw-output ".[] | select(.title==\"${ITEM}\").id")
+	$OP_BIN --cache item get --fields password "${ID}"
+}
+
+choose() {
+	ITEMS=$(list)$'\n'clear
+	ITEM=$(echo "$ITEMS" | ${CHOOSE_BIN})
+	if [ "$ITEM" = "clear" ]; then
+		clear
+		ITEM=$(list | ${CHOOSE_BIN})
+	fi
+	ID=$(list_raw | $JQ_BIN --raw-output ".[] | select(.title==\"${ITEM}\").id")
+	$OP_BIN --cache item get --fields password "${ID}"
+}
+
+#######################################################################
+
+case "$1" in
+
+list) list;;
+list_raw) list_raw;;
+clear) clear;;
+clean) clear;;
+get) get "$@";;
+choose) choose "$@";;
+*) usage;;
+esac

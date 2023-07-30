@@ -1,0 +1,19 @@
+depends:
+  - homebrew
+
+actions:
+  - action: package.install
+    list:
+      - wget
+      - watch
+      - tree
+      - gnu-sed
+      - fzf
+      - telnet
+      - netcat
+      - expect
+      - yq
+      - ytt
+      - jq
+      - bat
+      - no-more-secrets

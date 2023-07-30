@@ -1,108 +1,32 @@
 # Setting up a local development environment
 
+Provisioning of a local MacOS environment using the [Comtrya](https://github.com/comtrya/comtrya) tool.
 
-## Software installation
-*  XCode
+## Bootstrap
 
-    ```sh
-    xcode-select --install
-    ```
+Comtrya currently does not provide a distribution for _aarch64_, therefore a build with this architecture is available in this repository. For the current status of the provided Comtrya packages, see the [project pages](https://www.comtrya.dev/getting-started/installation).
 
-*  Rosetta
-
-    ```sh
-    softwareupdate --install-rosetta
-    ```
-
-* Homebrew
-
-     ```sh
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
-* Homebrew Applications
-     ```sh
-    brew bundle --file homebrew/Brewfile
-    ```
-
-* App Store Applications
-
-    At first sign into the Mac App Store app manually.
-
-    ```sh
-    cut -d' ' -f1 appstore/Masfile | xargs mas install
-    ```
-
-* Other Applications
-
-  * 1pass
-
-    https://downloads.1password.com/mac/1Password.zip
-
-    ```sh
-    mkdir -p /Users/tt/.config/1p
-    sudo ln -h zsh/1p /usr/local/bin/1p
-    ```
-
-## Home directory setup
-```sh
-mkdir -p ~/.ssh
-mkdir -p ~/projects
-
-sudo vi /etc/synthetic.conf
-```
-write the following to the file:
-```sh
-projects        ~/projects
-```
-
-## iTerm2 setup
 
 ```sh
-rm ~/Library/Preferences/com.googlecode.iterm2.plist
-ln -h iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+# XCode
+xcode-select --install
 
-touch ~/.hushlogin
-```
+# Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew install openssl@3
 
-## VSCode setup
-
-```sh
-mkdir -p ~/Library/Application\ Support/Code/User/
-ln -h vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-
-cat vscode/VSCodefile | xargs -n1 code --install-extension
-```
-
-## ASDF setup
-```sh
-cat asdf/.tool-plugins | xargs -n2 asdf plugin add
-cut -d' ' -f1 asdf/.tool-plugins | xargs -I{} asdf install {} latest
-ln -h asdf/.tool-versions ~/.tool-versions
-```
-
-## Direnv setup
-```sh
-mkdir -p ~/.config/direnv 
-ln -h direnv/direnvrc ~/.config/direnv/direnvrc
-```
-
-## ZSH setup
-```sh
-ln -h zsh/.zshrc ~/.zshrc
-```
-
-## Starship setup
-```sh
-ln -h starship/starship.toml ~/.config/starship.toml
+# Comtrya
+git clone https://github.com/totr/local-dev-environment.git
+sudo mkdir -p /usr/local/bin
+sudo cp local-dev-environment/bootstrap/comtrya_0.8.5 /usr/local/bin/comtrya
+sudo chmod 755  /usr/local/bin/comtrya
 
 ```
 
-## Krew setup
-```sh
-cat krew/.plugins | xargs -n1 kubectl krew install
-```
+## Provisioning of all packages
 
-## MacOS setup
 ```sh
-source macos/setup.sh
+comtrya apply
 ```

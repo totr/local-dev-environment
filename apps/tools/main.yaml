@@ -1,0 +1,53 @@
+depends:
+  - homebrew
+  - mas
+
+actions:
+  - action: package.install
+    list:
+      - orbstack
+      - kaleidoscope
+      - k6
+      - kcat
+      - nats-io/nats-tools/nats
+      - dive
+      - nnn
+      - mitmproxy
+      - wireshark-chmodbpf
+      - insomnia
+      - terraform-docs
+      - openvpn
+      - 1password
+      - 1password-cli
+      - google-chrome
+      - citrix-workspace
+  # iStat Menus    
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1319778037"
+  # Magnet    
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "441258766"
+  # Preproxy    
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1237580019"
+  # Kerberos Ticket Autorenewal
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1246781916"
+  # PingDoctor
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1350044974"

@@ -1,0 +1,47 @@
+depends:
+  - homebrew
+
+actions:
+  - action: package.install
+    list:
+      - visual-studio-code
+      - intellij-idea
+      - goland
+
+  # VS Code extensions
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "sdras.night-owl"
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "golang.Go"
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "redhat.java"
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "ms-kubernetes-tools.vscode-kubernetes-tools"
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "vmware.vscode-concourse"
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "hashicorp.terraform"
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "alefragnani.project-manager"
+

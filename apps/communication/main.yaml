@@ -1,0 +1,8 @@
+depends:
+  - homebrew
+
+actions:
+  - action: package.install
+    list:
+      - slack
+      - microsoft-teams

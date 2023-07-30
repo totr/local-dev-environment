@@ -1,0 +1,9 @@
+depends:
+  - homebrew
+
+actions:
+  - action: package.install
+    list:
+      - git
+      - git-crypt
+      - fork

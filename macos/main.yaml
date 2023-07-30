@@ -1,0 +1,52 @@
+actions:
+
+  # View Hidden Files in Terminal
+  - action: macos.default
+    domain: com.apple.Finder
+    key: AppleShowAllFiles
+    kind: bool
+    value: "true"
+
+  # System Preferences > Trackpad > Tap to click (requires restart) 
+  - action: macos.default
+    domain: com.apple.AppleMultitouchTrackpad
+    key: Clicking
+    kind: bool
+    value: "true"
+
+  # System Preferences > Trackpad > Tracking speed (requires restart) 
+  # 0: Slow
+  # 3: Fast
+  - action: macos.default
+    domain: NSGlobalDomain
+    key: com.apple.trackpad.scaling
+    kind: float
+    value: "3.0"
+
+  # Autohide the Dock (requires restart) 
+  - action: macos.default
+    domain: com.apple.dock
+    key: autohide
+    kind: bool
+    value: "true"
+
+  # Only show opened apps in Dock. (requires restart) 
+  - action: macos.default
+    domain: com.apple.dock
+    key: static-only
+    kind: bool
+    value: "true"
+
+# Show all file extensions in the Finder.
+  - action: macos.default
+    domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    kind: bool
+    value: "true"
+
+# Show hidden files in the Finder. 
+  - action: macos.default
+    domain: com.apple.finder
+    key: AppleShowAllFiles
+    kind: bool
+    value: "true"

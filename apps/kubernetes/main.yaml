@@ -1,0 +1,24 @@
+depends:
+  - homebrew
+
+actions:
+  - action: package.install
+    list:
+      - k3d
+      - stern
+      - kubectx
+      - kubespy
+      - kui
+      - k9s
+      - krew
+      - vendir  # Carvel
+      - kapp    # Carvel
+      - imgpkg  # Carvel
+      - datawire/blackbird/telepresence-arm64
+
+  - action: command.run
+    command: sh
+    args:
+      - "-c"
+      - "kubectl krew install < apps/kubernetes/files/krew-plugins.config"
+
