@@ -10,6 +10,7 @@ Comtrya currently does not provide a distribution for _aarch64_, therefore a bui
 ```sh
 # XCode
 xcode-select --install
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
 
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

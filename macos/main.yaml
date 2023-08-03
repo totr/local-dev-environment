@@ -50,3 +50,14 @@ actions:
     key: AppleShowAllFiles
     kind: bool
     value: "true"
+
+# Turn on Firewall. 
+  - action: command.run
+    command: defaults
+    args:
+      - write
+      - /Library/Preferences/com.apple.alf
+      - globalstate
+      - "-int"
+      - "1"
+    sudo: true

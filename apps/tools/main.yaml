@@ -56,8 +56,11 @@ actions:
     command: chmod
     args:
       - "755"
-      - apps/tools/files/cisco-any-connect-installer.sh
+      - apps/tools/files/cisco-any-connect/installer.sh
   - action: command.run
-    command: apps/tools/files/cisco-any-connect-installer.sh
+    command: apps/tools/files/cisco-any-connect/installer.sh
     args:
-      - apps/tools/files/cisco-any-connect-options.xml
+      - apps/tools/files/cisco-any-connect/install-options.xml
+  - action: file.link
+    from: cisco-any-connect/.anyconnect
+    to: "{{ user.home_dir }}/.anyconnect"
