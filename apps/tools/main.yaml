@@ -16,11 +16,11 @@ actions:
       - wireshark-chmodbpf
       - insomnia
       - terraform-docs
-      - openvpn
       - 1password
       - 1password-cli
       - google-chrome
       - citrix-workspace
+      - glow
   # iStat Menus    
   - action: command.run
     command: mas
@@ -51,3 +51,13 @@ actions:
     args:
       - "install"
       - "1350044974"
+  # Cisco VPN AnyConnect Client 
+  - action: command.run
+    command: chmod
+    args:
+      - "755"
+      - apps/tools/files/cisco-any-connect-installer.sh
+  - action: command.run
+    command: apps/tools/files/cisco-any-connect-installer.sh
+    args:
+      - apps/tools/files/cisco-any-connect-options.xml

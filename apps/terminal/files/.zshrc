@@ -26,4 +26,6 @@ p() {
   cd /projects/$1
 }
 
-
+kcname() {
+  kubectl config view -o json | jq -r '."current-context"'
+}
