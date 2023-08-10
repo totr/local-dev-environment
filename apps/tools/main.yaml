@@ -55,16 +55,30 @@ actions:
     args:
       - "install"
       - "1350044974"
+
   # Cisco VPN AnyConnect Client 
-  - action: command.run
-    command: chmod
-    args:
-      - "755"
-      - apps/tools/files/cisco-any-connect/installer.sh
-  - action: command.run
-    command: apps/tools/files/cisco-any-connect/installer.sh
-    args:
-      - apps/tools/files/cisco-any-connect/install-options.xml
-  - action: file.link
-    from: cisco-any-connect/.anyconnect
-    to: "{{ user.home_dir }}/.anyconnect"
+  # Enable manually
+  #- action: command.run
+  #  command: chmod
+  #  args:
+  #    - "755"
+  #    - apps/tools/files/cisco-any-connect/installer.sh
+  #- action: command.run
+  #  command: apps/tools/files/cisco-any-connect/installer.sh
+  #  args:
+  #    - apps/tools/files/cisco-any-connect/install-options.xml
+  #- action: file.link
+  #  from: cisco-any-connect/.anyconnect
+  #  to: "{{ user.home_dir }}/.anyconnect"
+  #- action: command.run
+  #  command: chmod
+  #  args:
+  #    - "755"
+  #    - apps/tools/files/cisco-any-connect/installer.sh
+  # Disable Cisco VPN daemon
+  #- action: command.run
+  #  command: launchctl
+  #  args:
+  #    - unload
+  #    - /Library/LaunchDaemons/com.cisco.anyconnect.vpnagentd.plist
+  #  sudo: true
