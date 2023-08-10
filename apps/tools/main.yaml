@@ -13,7 +13,7 @@ actions:
       - dive
       - nnn
       - mitmproxy
-      - wireshark-chmodbpf
+      - wireshark
       - insomnia
       - terraform-docs
       - 1password
@@ -21,6 +21,10 @@ actions:
       - google-chrome
       - citrix-workspace
       - glow
+      - openconnect
+      - xmlstarlet #required for OpenConnect CSD wrapper
+      - vpn-slice
+      - ngrok
   # iStat Menus    
   - action: command.run
     command: mas
