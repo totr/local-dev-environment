@@ -25,6 +25,14 @@ actions:
       - xmlstarlet #required for OpenConnect CSD wrapper
       - vpn-slice
       - ngrok
+
+ # Cargo
+  - action: command.run
+    command: sh
+    args:
+      - "-c"
+      - "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
+
   # iStat Menus    
   - action: command.run
     command: mas
