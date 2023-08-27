@@ -5,6 +5,12 @@ setupSsh () {
   ln -s $PWD/env/ssh/id_rsa.pub ~/.ssh/id_rsa.pub
 }
 
+setupMaven () {
+  maven_home=$(asdf where maven)
+  unlink $maven_home/conf/settings.xml
+  ln -s $PWD/env/maven/settings.xml $maven_home/conf/settings.xml
+}
+
 setupKubeconfig () {
   export KUBECONFIG=$(find $PWD/env/kubeconfig -type f -name '*.yaml' | gsed ':a;N;s/\n/:/;ba')
 }
