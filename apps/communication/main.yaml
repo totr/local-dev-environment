@@ -6,3 +6,4 @@ actions:
     list:
       - slack
       - microsoft-teams
+      - zoom
