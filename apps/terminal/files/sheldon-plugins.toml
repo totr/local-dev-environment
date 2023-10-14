@@ -18,6 +18,17 @@ github = "romkatv/zsh-defer"
 [templates]
 defer = "{{ hooks | get: \"pre\" | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks | get: \"post\" | nl }}"
 
+[plugins.compinit]
+inline = 'autoload -Uz compinit && zsh-defer compinit'
+
+[plugins.asdfpath]
+# TODO zsh-defer 
+inline = 'source /opt/homebrew/opt/asdf/libexec/asdf.sh'
+
+[plugins.golangenv]
+# TODO zsh-defer 
+inline = 'source ~/.asdf/plugins/golang/set-env.zsh'
+
 [plugins.forgit]
 github = "wfxr/forgit"
 apply = ["defer"]
@@ -25,3 +36,7 @@ apply = ["defer"]
 [plugins.kubectl]
 remote = 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/kubectl/kubectl.plugin.zsh'
 apply = ["defer"]
+
+[plugins.kubeswitch]
+inline = 'zsh-defer eval "$(switcher init zsh)"'
+

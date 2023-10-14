@@ -11,10 +11,6 @@ setupMaven () {
   ln -s $PWD/env/maven/settings.xml $maven_home/conf/settings.xml
 }
 
-setupKubeconfig () {
-  export KUBECONFIG=$(find $PWD/env/kubeconfig -type f -name '*.yaml' | gsed ':a;N;s/\n/:/;ba')
-}
-
 export_function() {
   local name=$1
   local alias_dir=$PWD/.direnv/aliases
@@ -27,19 +23,4 @@ export_function() {
     echo "$name" >> "$target"
     chmod +x "$target"
   fi
-}
-
-export_alias() {
-  local name=$1
-  shift
-  local alias_dir=$PWD/.direnv/aliases
-  local target="$alias_dir/$name"
-  mkdir -p "$alias_dir"
-  if ! [[ ":$PATH:" == *":$alias_dir:"* ]]; then
-    PATH_add "$alias_dir"
-  fi
-
-  echo "#!/usr/bin/env bash -e" > "$target"
-  echo "$@" >> "$target"
-  chmod +x "$target"
 }
