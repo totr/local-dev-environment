@@ -6,7 +6,6 @@ actions:
   - action: package.install
     list:
       - orbstack
-      - kaleidoscope
       - k6
       - kcat
       - nats-io/nats-tools/nats
@@ -25,6 +24,7 @@ actions:
       - xmlstarlet #required for OpenConnect CSD wrapper
       - vpn-slice
       - ngrok
+      - obsidian
 
  # Cargo
   - action: command.run
@@ -63,6 +63,13 @@ actions:
     args:
       - "install"
       - "1350044974"
+
+  # Kaleidoscope 3
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1575557335"
 
   # Cisco VPN AnyConnect Client 
   # Enable manually
