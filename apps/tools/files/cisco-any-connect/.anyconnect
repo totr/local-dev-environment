@@ -2,10 +2,10 @@
 <AnyConnectPreferences>
 <DefaultUser></DefaultUser>
 <DefaultSecondUser></DefaultSecondUser>
-<ClientCertificateThumbprint>3E6121DA5FBEC7BC76DDD3F1D5068A16E23A7DA6</ClientCertificateThumbprint>
+<ClientCertificateThumbprint>CE4E349F318F1D0892071E80614EAC21E71BE60B</ClientCertificateThumbprint>
 <MultipleClientCertificateThumbprints></MultipleClientCertificateThumbprints>
 <ServerCertificateThumbprint></ServerCertificateThumbprint>
-<DefaultHostName>VPN KB NONSTANDARD</DefaultHostName>
+<DefaultHostName>ra</DefaultHostName>
 <DefaultHostAddress></DefaultHostAddress>
 <DefaultGroup></DefaultGroup>
 <ProxyHost></ProxyHost>

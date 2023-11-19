@@ -1,6 +1,6 @@
 #!/bin/sh
 
-curl -L -o ~/Downloads/cisco-any-connect.dmg  "https://vc.vscht.cz/files/uzel/0026707/0006~~S8yrTM7Py0tNLtHNTUzOL9Y10TM00DMwNzAz1C0oSk1JLcjJr9TNtgQA.dmg?redirected"
+curl -L -o ~/Downloads/cisco-any-connect.dmg  "https://uci.service-now.com/sys_attachment.do?sys_id=7cd4a94b1b2179546d7bb99f034bcb93"
 
 any_connect_volume=$(hdiutil attach ~/Downloads/cisco-any-connect.dmg | grep /Volumes | tr -s ' ' | awk -F '[ ]' '{print $3 " " $4}' | xargs)
 
