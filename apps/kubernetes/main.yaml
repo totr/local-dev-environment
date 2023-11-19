@@ -10,6 +10,7 @@ actions:
       - vendir  # Carvel
       - kapp    # Carvel
       - imgpkg  # Carvel
+      - kbld    # Carvel
       - datawire/blackbird/telepresence-arm64
 
   - action: command.run
