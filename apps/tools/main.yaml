@@ -18,7 +18,6 @@ actions:
       - 1password
       - 1password-cli
       - google-chrome
-      - glow
       - openconnect
       - xmlstarlet #required for OpenConnect CSD wrapper
       - vpn-slice
