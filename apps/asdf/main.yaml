@@ -66,6 +66,14 @@ actions:
     args:
       - "plugin"
       - "add"
+      - "pulumi"
+      - "https://github.com/canha/asdf-pulumi.git"
+
+  - action: command.run
+    command: asdf
+    args:
+      - "plugin"
+      - "add"
       - "fly"
       - "https://github.com/uesyn/asdf-fly"
 
@@ -91,6 +99,14 @@ actions:
       - "plugin"
       - "add"
       - "direnv"
+
+  - action: command.run
+    command: asdf
+    args:
+      - "plugin"
+      - "add"
+      - "oras"
+      - "https://github.com/bodgit/asdf-oras.git"
 
   - action: file.link
     from: .tool-versions
