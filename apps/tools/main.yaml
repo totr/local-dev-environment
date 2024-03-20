@@ -23,6 +23,7 @@ actions:
       - vpn-slice
       - ngrok
       - obsidian
+      - citrix-workspace
 
  # Cargo
   - action: command.run
