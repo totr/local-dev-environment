@@ -25,6 +25,7 @@ actions:
       - ngrok
       - obsidian
       - citrix-workspace
+      - kubecolor/tap/kubecolor
 
  # Cargo
   - action: command.run

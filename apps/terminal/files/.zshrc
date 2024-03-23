@@ -9,6 +9,7 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 
 # Aliases
 alias sed=gsed
+alias kubectl="kubecolor"
 alias watch='watch '
 alias kube='k3d cluster'
 alias kn='switch namespace'
