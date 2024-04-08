@@ -6,3 +6,4 @@ helm 3.14.0
 maven 3.9.6
 pulumi 3.111.1
 oras 1.1.0
+terraform 1.5.7
