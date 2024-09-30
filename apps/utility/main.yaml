@@ -17,3 +17,4 @@ actions:
       - jq
       - bat
       - no-more-secrets
+      - certigo # https://github.com/square/certigo
