@@ -1,16 +1,4 @@
 actions:
   - action: directory.create
     path: "{{ user.home_dir }}/projects"
-
-  - action: command.run
-    command: cp
-    args:
-      - system/files/synthetic.conf
-      - /etc/synthetic.conf
-    sudo: true
-
-  - action: command.run
-    command: chmod
-    args:
-      - "644"
-      - /etc/synthetic.conf
+    

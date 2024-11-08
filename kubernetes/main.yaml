@@ -1,0 +1,23 @@
+depends:
+  - dev-tools
+  
+actions:
+  - action: package.install
+    list:
+      - krew
+      - k3d
+      - danielfoehrkn/switch/switch
+      - kubespy
+      - k9S
+      - vendir  # Carvel
+      - kapp    # Carvel
+      - imgpkg  # Carvel
+      - kbld    # Carvel
+      - datawire/blackbird/telepresence-arm64
+      - kubecolor/tap/kubecolor
+
+  - action: command.run
+    command: sh
+    args:
+      - "-c"
+      - "kubectl krew install < kubernetes/files/krew-plugins.config"

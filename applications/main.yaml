@@ -1,0 +1,91 @@
+depends:
+  - homebrew
+  - mas
+
+actions:
+  - action: package.install
+    list:
+      - 1password
+      - 1password-cli
+      - google-chrome
+      - openconnect
+      - xmlstarlet #required for OpenConnect CSD wrapper
+      - vpn-slice
+      - citrix-workspace
+      - slack
+      - microsoft-teams
+      - zoom
+      - obsidian
+  # iStat Menus 7    
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "6499559693"
+  # Kerberos Ticket Autorenewal
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1246781916"
+  # Kaleidoscope 3
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1575557335"
+  # Install Spotify
+  - action: package.install
+    list:
+      - spotify
+  # Install MindNode    
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1289197285"
+  # Install MarginNote 3    
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1423522373"
+  # Install Notability    
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "360593530"
+  # Install 1password-for-safari    
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1569813296"
+
+  # Cisco VPN AnyConnect Client 
+  # Enable manually
+  #- action: command.run
+  #  command: chmod
+  #  args:
+  #    - "755"
+  #    - applications/files/cisco-any-connect/installer.sh
+  #- action: command.run
+  #  command: applications/files/cisco-any-connect/installer.sh
+  #  args:
+  #    - applications/files/cisco-any-connect/install-options.xml
+  #- action: file.link
+  #  from: cisco-any-connect/.anyconnect
+  #  to: "{{ user.home_dir }}/.anyconnect"
+  #- action: command.run
+  #  command: chmod
+  #  args:
+  #    - "755"
+  #    - applications/files/cisco-any-connect/installer.sh
+  # Disable Cisco VPN daemon
+  #- action: command.run
+  #  command: launchctl
+  #  args:
+  #    - unload
+  #    - /Library/LaunchDaemons/com.cisco.secureclient.vpn.service.agent
+  #  sudo: true

@@ -1,0 +1,26 @@
+[tools]
+nodejs = "latest"
+golang = "latest"
+java = "temurin-21.0.5+11.0.LTS"
+maven = "3.9.9"
+kubectl = "latest"
+pulumi = "latest"
+helm = "latest" 
+oras = "latest"
+istioctl = "latest"
+argocd = "latest"
+
+[env]
+PROJECT_NAME="{{env.PWD}}"
+
+[tasks."init:maven"]
+hide = true
+run = "(export maven_settings=$(dirname $(dirname $(which mvn)))/conf/settings.xml && unlink $maven_settings; ln -s $PROJECT_NAME/env/maven/settings.xml $maven_settings)"
+
+[tasks."init:ssh"]
+hide = true
+run = "(unlink ~/.ssh/id_rsa; unlink ~/.ssh/id_rsa.pub; ln -s $PROJECT_NAME/env/ssh/id_rsa ~/.ssh/id_rsa; ln -s $PROJECT_NAME/env/ssh/id_rsa.pub ~/.ssh/id_rsa.pub)"
+
+[tasks.init]
+hide = true
+depends = ["init:*"]

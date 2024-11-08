@@ -1,0 +1,28 @@
+depends:
+  - homebrew
+
+actions:
+  - action: package.install
+    list:
+      - warp
+
+  - action: directory.create
+    path: "{{ user.home_dir }}/.zsh-plugins/"
+  - action: command.run
+    command: curl
+    args:
+      - "-L"
+      - "-o"
+      - "{{ user.home_dir }}/.zsh-plugins/zsh-defer.zsh"
+      - "https://raw.githubusercontent.com/romkatv/zsh-defer/master/zsh-defer.plugin.zsh"
+  - action: command.run
+    command: curl
+    args:
+      - "-L"
+      - "-o"
+      - "{{ user.home_dir }}/.zsh-plugins/kubectl.zsh"
+      - "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/kubectl/kubectl.plugin.zsh"
+  - action: file.link
+    from: .zshrc
+    to: "{{ user.home_dir }}/.zshrc"
+

@@ -1,7 +1,4 @@
 actions:
   - action: package.repository
     provider: homebrew
-    name: homebrew/cask
-  - action: package.repository
-    provider: homebrew
     name: vmware-tanzu/carvel

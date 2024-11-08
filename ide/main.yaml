@@ -1,0 +1,59 @@
+depends:
+  - homebrew
+
+actions:
+  - action: package.install
+    list:
+      - visual-studio-code
+      - intellij-idea
+      - goland
+      - webstorm
+
+  # VS Code extensions
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "golang.Go"
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "redhat.java"
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "ms-kubernetes-tools.vscode-kubernetes-tools"
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "hashicorp.terraform"
+  - action: command.run
+    command: code
+    args:
+      - "--install-extension"
+      - "alefragnani.project-manager"
+
+  # Intellij-idea plugins
+  - action: command.run
+    command: idea
+    args:
+      - "installPlugins"
+      - "kotest-plugin-intellij"
+  - action: command.run
+    command: idea
+    args:
+      - "installPlugins"
+      - "com.samdark.intellij-visual-studio-code-dark-plus"
+
+
+  # WebStorm plugins
+  - action: command.run
+    command: webstorm
+    args:
+      - "installPlugins"
+      - "com.samdark.intellij-visual-studio-code-dark-plus"
+
+  # TODO JetBrains IDE settings sync - https://www.jetbrains.com/help/webstorm/sharing-your-ide-settings.html   

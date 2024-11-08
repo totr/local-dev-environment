@@ -1,0 +1,75 @@
+depends:
+  - homebrew
+
+actions:
+  - action: package.install
+    list:
+      - mise
+      - git
+      - git-crypt
+      - forgit
+      - fork
+      - azure-cli
+      - awscli
+      - aws-iam-authenticator
+      - google-cloud-sdk
+      - wget
+      - watch
+      - tree
+      - gnu-sed
+      - fzf
+      - telnet
+      - netcat
+      - expect
+      - yq
+      - ytt
+      - jq
+      - bat
+      - dnsmasq
+      - no-more-secrets
+      - certigo # https://github.com/square/certigo
+      - terraform-docs
+      - mitmproxy
+      - kcat
+      - nats-io/nats-tools/nats
+      - orbstack
+      - dive
+      - wireshark
+      - insomnia
+      - nnn
+      - skopeo
+  - action: file.link
+    from: mise-config.toml
+    to: "{{ user.home_dir }}/.config/mise/config.toml"
+  - action: command.run
+    command: mise
+    args:
+      - "install"
+      - "-y"
+  # Mise IDE integration via asdf directory
+  # https://github.com/jdx/mise/blob/a6af78b1dee88d37feb08f5190d671a7ca3f8e98/docs/ide-integration.md#jetbrains-editors-intellij-rustrover-pycharm-webstorm-rubymine-goland-etc    
+  - action: file.link
+    from: "{{ user.home_dir }}/.local/share/mise"
+    to: "{{ user.home_dir }}//.asdf"
+
+  - action: directory.create
+    path: "{{ user.home_dir }}/.config/1p"
+  - action: command.run
+    command: chmod
+    args:
+      - "755"
+      - dev-tools/files/1p
+  - action: command.run
+    command: ln
+    args:
+      - -f
+      - -h
+      - dev-tools/files/1p
+      - /usr/local/bin/1p
+    sudo: true
+  - action: command.run
+    command: gcloud
+    args:
+      - components
+      - install
+      - gke-gcloud-auth-plugin

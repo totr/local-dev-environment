@@ -1,33 +1,33 @@
 # Setting up a local development environment
 
-Provisioning of a local MacOS environment using the [Comtrya](https://github.com/comtrya/comtrya) tool.
+Provisioning of a local MacOS environment using the [Comtrya](https://comtrya.dev) tool.
 
 ## Bootstrap
 
-Comtrya currently does not provide a distribution for _aarch64_, therefore a build with this architecture is available in this repository. For the current status of the provided Comtrya packages, see the [project pages](https://www.comtrya.dev/getting-started/installation).
-
-
+### XCode
 ```sh
-# XCode
 xcode-select --install
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+```
 
-# Homebrew
+### Homebrew
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
+echo >> ~/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
-brew install openssl@3
+```
 
-# Comtrya
-git clone https://github.com/totr/local-dev-environment.git
+### Comtrya
+```sh
+curl -fsSL https://get.comtrya.dev | sh
 sudo mkdir -p /usr/local/bin
-sudo cp local-dev-environment/bootstrap/comtrya_0.8.5 /usr/local/bin/comtrya
-sudo chmod 755  /usr/local/bin/comtrya
-
+sudo cp comtrya-aarch64-apple-darwin /usr/local/bin/comtrya
 ```
 
 ## Provisioning of all packages
-
 ```sh
+git clone https://github.com/totr/local-dev-environment.git
+cd local-dev-environment
 comtrya apply
 ```

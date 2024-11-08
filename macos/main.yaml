@@ -1,20 +1,36 @@
+# Note that some of these changes require a logout/restart to take effect.
 actions:
-
-  # View Hidden Files in Terminal
+  # Show hidden files in the Finder. 
   - action: macos.default
-    domain: com.apple.Finder
+    domain: com.apple.finder
     key: AppleShowAllFiles
     kind: bool
     value: "true"
-
-  # System Preferences > Trackpad > Tap to click (requires restart) 
+  # Show all file extensions in the Finder.
   - action: macos.default
-    domain: com.apple.AppleMultitouchTrackpad
-    key: Clicking
+    domain: NSGlobalDomain
+    key: AppleShowAllExtensions
     kind: bool
     value: "true"
-
-  # System Preferences > Trackpad > Tracking speed (requires restart) 
+  # Finder -> View > Show Path Bar.
+  - action: macos.default
+    domain: com.apple.finder
+    key: ShowPathbar
+    kind: bool
+    value: "true"
+  # Put the Dock on the bottom of the screen.
+  - action: macos.default
+    domain: com.apple.dock
+    key: orientation
+    kind: string
+    value: "bottom"
+  # Autohide the Dock.
+  - action: macos.default
+    domain: com.apple.dock
+    key: autohide
+    kind: bool
+    value: "true"
+  # System Preferences > Trackpad > Tracking speed 
   # 0: Slow
   # 3: Fast
   - action: macos.default
@@ -22,42 +38,33 @@ actions:
     key: com.apple.trackpad.scaling
     kind: float
     value: "3.0"
-
-  # Autohide the Dock (requires restart) 
-  - action: macos.default
-    domain: com.apple.dock
-    key: autohide
-    kind: bool
-    value: "true"
-
-  # Only show opened apps in Dock. (requires restart) 
+  # Only show opened apps in Dock.
   - action: macos.default
     domain: com.apple.dock
     key: static-only
     kind: bool
     value: "true"
-
-# Show all file extensions in the Finder.
+  # System Preferences > Trackpad > Tap to click.
   - action: macos.default
-    domain: NSGlobalDomain
-    key: AppleShowAllExtensions
+    domain: com.apple.AppleMultitouchTrackpad
+    key: Clicking
     kind: bool
     value: "true"
-
-# Show hidden files in the Finder. 
-  - action: macos.default
-    domain: com.apple.finder
-    key: AppleShowAllFiles
-    kind: bool
-    value: "true"
-
-# Turn on Firewall. 
+  # Turn on Firewall. 
   - action: command.run
-    command: defaults
+    command: /usr/libexec/ApplicationFirewall/socketfilterfw
     args:
-      - write
-      - /Library/Preferences/com.apple.alf
-      - globalstate
-      - "-int"
-      - "1"
+      - --setglobalstate
+      - "on"
     sudo: true
+  # TODO
+  # System Settings > Displays > Use as - More Space
+  # System Settings > Sound > Play sound on startup - disable
+  # System Settings > Sound > Alert volume - zero
+  # Finder > Settings > Sidebar > Locations > Hard disks - enable
+
+ 
+
+
+
+
