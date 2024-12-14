@@ -7,6 +7,7 @@ actions:
       - mise
       - git
       - git-crypt
+      - git-credential-manager
       - forgit
       - fork
       - azure-cli
@@ -25,6 +26,7 @@ actions:
       - ytt
       - jq
       - bat
+      - httpie
       - dnsmasq
       - no-more-secrets
       - certigo # https://github.com/square/certigo
@@ -34,7 +36,6 @@ actions:
       - nats-io/nats-tools/nats
       - orbstack
       - dive
-      - wireshark
       - insomnia
       - nnn
       - skopeo
@@ -73,3 +74,9 @@ actions:
       - components
       - install
       - gke-gcloud-auth-plugin
+ # - action: command.run
+ #   command: brew
+ #   args:
+ #     - "install"
+ #     - "--cask"
+ #     - "wireshark"
