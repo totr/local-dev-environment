@@ -36,6 +36,18 @@ actions:
       - "--install-extension"
       - "alefragnani.project-manager"
 
+  # Goland plugins
+  - action: command.run
+    command: goland
+    args:
+      - "installPlugins"
+      - "com.samdark.intellij-visual-studio-code-dark-plus"
+  - action: command.run
+    command: goland
+    args:
+      - "installPlugins"
+      - "com.intellij.ml.llm"
+
   # Intellij-idea plugins
   - action: command.run
     command: idea
@@ -47,7 +59,11 @@ actions:
     args:
       - "installPlugins"
       - "com.samdark.intellij-visual-studio-code-dark-plus"
-
+  - action: command.run
+    command: idea
+    args:
+      - "installPlugins"
+      - "com.intellij.ml.llm"
 
   # WebStorm plugins
   - action: command.run
@@ -55,5 +71,10 @@ actions:
     args:
       - "installPlugins"
       - "com.samdark.intellij-visual-studio-code-dark-plus"
+  - action: command.run
+    command: webstorm
+    args:
+      - "installPlugins"
+      - "com.intellij.ml.llm"
 
   # TODO JetBrains IDE settings sync - https://www.jetbrains.com/help/webstorm/sharing-your-ide-settings.html   
