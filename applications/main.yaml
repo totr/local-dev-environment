@@ -62,6 +62,12 @@ actions:
     args:
       - "install"
       - "1569813296"
+  # Install kubeterm
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "6450548861"
 
   # Cisco VPN AnyConnect Client 
   # Enable manually
