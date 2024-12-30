@@ -21,7 +21,7 @@ alias kube='k3d cluster'
 alias kn='switch namespace'
 alias kc='switch --config-path $PROJECT_NAME/env/kubeconfig/switch-config.yaml'
 alias kch='switch history --config-path $PROJECT_NAME/env/kubeconfig/switch-config.yaml'
-alias mr='mise run --'
+alias mr='mise run'
 
 # Common functions
 kcal() {
