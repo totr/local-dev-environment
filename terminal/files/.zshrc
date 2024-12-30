@@ -158,5 +158,5 @@ gaf() {
 p() {
   proj=$(ls ~/projects | fzf)
   cd ~/projects/$proj
-  mr init
+  mr init 2> /dev/null
 }
