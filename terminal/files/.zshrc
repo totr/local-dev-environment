@@ -22,6 +22,8 @@ alias kn='switch namespace'
 alias kc='switch --config-path $PROJECT_NAME/env/kubeconfig/switch-config.yaml'
 alias kch='switch history --config-path $PROJECT_NAME/env/kubeconfig/switch-config.yaml'
 alias mr='mise run'
+alias kkp='k klock pod'
+alias kkpa='k klock pod -A'
 
 # Common functions
 kcal() {
@@ -156,7 +158,7 @@ gaf() {
 }
 
 p() {
-  proj=$(ls ~/projects | fzf)
+  proj=$(ls ~/projects | grep -v archived| fzf)
   cd ~/projects/$proj
   mr init 2> /dev/null
 }
