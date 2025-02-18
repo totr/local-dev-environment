@@ -39,6 +39,7 @@ actions:
       - insomnia
       - nnn
       - skopeo
+      - visualvm
   - action: file.link
     from: mise-config.toml
     to: "{{ user.home_dir }}/.config/mise/config.toml"
