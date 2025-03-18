@@ -68,6 +68,12 @@ actions:
     args:
       - "install"
       - "6450548861"
+  # Install Kef Connect
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1512439427"
 
   # Cisco VPN AnyConnect Client 
   # Enable manually
