@@ -11,6 +11,7 @@ actions:
       - forgit
       - fork
       - azure-cli
+      - openshift-cli
       - awscli
       - aws-iam-authenticator
       - google-cloud-sdk
@@ -40,6 +41,7 @@ actions:
       - nnn
       - skopeo
       - visualvm
+      - Azure/kubelogin/kubelogin
   - action: file.link
     from: mise-config.toml
     to: "{{ user.home_dir }}/.config/mise/config.toml"
