@@ -9,7 +9,6 @@ helm = "latest"
 oras = "latest"
 istioctl = "latest"
 argocd = "latest"
-terraform = "latest"
 
 [env]
 PROJECT_NAME="{{env.PWD}}"
