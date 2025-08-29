@@ -74,6 +74,18 @@ actions:
     args:
       - "install"
       - "1512439427"
+  # Install Timepage
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "989178902"
+  # Install Actions
+  - action: command.run
+    command: mas
+    args:
+      - "install"
+      - "1227402276"
 
   # Cisco VPN AnyConnect Client 
   # Enable manually
