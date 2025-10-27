@@ -42,6 +42,7 @@ actions:
       - skopeo
       - visualvm
       - Azure/kubelogin/kubelogin
+      - helix
   - action: file.link
     from: mise-config.toml
     to: "{{ user.home_dir }}/.config/mise/config.toml"

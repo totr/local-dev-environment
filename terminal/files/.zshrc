@@ -11,10 +11,14 @@ zsh-defer eval "$(switcher init zsh)"
 # Krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+# NNN
+export NNN_OPENER=hx
+
 # Aliases
 alias c=cd
 alias sed=gsed
 alias l='nnn -de'
+alias n='nnn -c'
 alias kubectl="kubecolor"
 alias watch='watch '
 alias kube='k3d cluster'
