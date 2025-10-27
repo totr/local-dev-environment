@@ -16,6 +16,7 @@ actions:
       - microsoft-teams
       - zoom
       - obsidian
+      - openvpn
   # iStat Menus 7    
   - action: command.run
     command: mas
