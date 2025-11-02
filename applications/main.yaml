@@ -17,6 +17,12 @@ actions:
       - zoom
       - obsidian
       - openvpn
+  - action: command.run
+    command: brew
+    args:
+      - "install"
+      - "--cask"
+      - "amazon-photos"
   # iStat Menus 7    
   - action: command.run
     command: mas
